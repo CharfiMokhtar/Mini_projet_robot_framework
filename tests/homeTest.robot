@@ -8,6 +8,7 @@ Test Teardown    close
 
 *** Test Cases ***
 test ajout au panier
+    [Tags]    POEI2-1070
     login          standard_user    secret_sauce
     add to cart    Sauce Labs Backpack
     check cart not empty

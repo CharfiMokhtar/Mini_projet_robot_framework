@@ -9,9 +9,11 @@ Test Teardown    close
 
 *** Test Cases ***
 test success login
+    [Tags]    POEI2-1064
     login    ${usernameCredential}    ${passwordCredential}
     check home page
 
 test failed login
+    [Tags]    POEI2-1067
     login    ${usernameCredential}    ${wrondPasswordCredential}
     check error message

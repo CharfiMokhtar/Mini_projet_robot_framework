@@ -9,6 +9,7 @@ Test Teardown    close
 
 *** Test Cases ***
 test processus achat
+    [Tags]    POEI2-1071
     login          standard_user    secret_sauce
     add to cart    Sauce Labs Backpack
     go to cart
