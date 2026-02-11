@@ -1,6 +1,10 @@
 pipeline {
     agent any
 
+    environment {
+        TOKEN = credentials('TOKEN')
+    }
+
     stages {
 
         stage('Build & Test') {
@@ -12,6 +16,11 @@ pipeline {
     }
 
     post {
+        always {
+            echo "Importation des resultats d'execution vers xray"
+            bat  'curl -H "Content-Type: text/xml" -X POST -H "Authorization: Bearer %TOKEN%"  --data @"results/output.xml" https://xray.cloud.getxray.app/api/v2/import/execution/robot?projectKey=POEI2'
+        }
+
         success {
             echo 'Tests exécutés avec succès 🎉'
         }
