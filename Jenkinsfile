@@ -3,9 +3,6 @@ pipeline {
 
     environment {
         TOKEN = credentials('TOKEN')
-        JAVA_TOOL_OPTIONS = "-Dfile.encoding=UTF-8"
-        LANG = "fr_FR.UTF-8"
-        LC_ALL = "fr_FR.UTF-8"
     }
 
     stages {
